@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mary Kimilu's BIT student portfolio.">
+<title>Mary Kimilu | MyPortfolio</title>
+<style>
+:root{--bg:#09090b;--surface:#18181b;--border:#303036;--text:#f4f4f5;--muted:#a1a1aa;--green:#10b981;--green-light:#6ee7b7}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+a{color:var(--green-light);text-decoration:none}a:hover{color:var(--green)}
+.container{width:min(1100px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(9,9,11,.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.navbar{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{color:var(--text);font-size:1.2rem;font-weight:800;letter-spacing:-.04em}.logo span{color:var(--green)}
+nav{display:flex;flex-wrap:wrap;gap:26px}nav a{color:var(--muted);font-size:.92rem}nav a:hover{color:var(--green-light)}
+.hero{min-height:590px;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center;padding-top:75px;padding-bottom:55px}
+.eyebrow{color:var(--green-light);font-size:.72rem;letter-spacing:.12em;font-family:monospace}
+h1{margin:18px 0;font-size:clamp(2.7rem,6vw,4.8rem);line-height:1.08;letter-spacing:-.065em}h1 span{display:block;color:var(--green-light)}
+h2{line-height:1.2;letter-spacing:-.04em;font-size:clamp(1.7rem,3.8vw,2.8rem)}.hero h2{font-size:clamp(1.2rem,2.4vw,1.65rem);letter-spacing:-.025em}
+p{color:var(--muted)}.hero-text{max-width:570px}.green{color:var(--green-light)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.button{display:inline-block;padding:11px 17px;border-radius:8px;font-weight:700;font-size:.9rem}
+.primary{background:var(--green);color:#052e24;border:1px solid var(--green)}.primary:hover{background:var(--green-light);color:#052e24}
+.secondary{border:1px solid #52525b;color:var(--text)}.secondary:hover{border-color:var(--green)}
+.code-card{border:1px solid #34343b;background:var(--surface);border-radius:14px;overflow:hidden;box-shadow:0 25px 70px #0006}
+.code-header{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--muted);font:.8rem monospace}.dots{color:var(--green);margin-right:12px}
+pre{margin:0;padding:24px 18px;white-space:pre-wrap;overflow-wrap:anywhere;color:#d4d4d8;font:.82rem/1.9 monospace}.purple{color:#c4b5fd}.code-green{color:var(--green-light)}
+.code-footer{border-top:1px solid var(--border);padding:12px 16px;color:var(--muted);font-size:.76rem}
+.section{padding:82px 0;border-top:1px solid var(--border)}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
+.info-card{padding:17px;background:var(--surface);border:1px solid var(--border);border-radius:9px}.info-card small{display:block;margin-bottom:6px;color:var(--muted);font:.68rem monospace;letter-spacing:.07em}.info-card strong{font-size:.9rem}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.section-heading p{max-width:390px}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.project-card{padding:22px;background:var(--surface);border:1px solid var(--border);border-radius:12px}.project-number{color:var(--green-light);font:.7rem monospace;letter-spacing:.08em}.project-card h3{margin-top:20px}.project-card p{font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.tags span{border:1px solid var(--border);border-radius:5px;padding:4px 8px;color:var(--muted);font-size:.72rem}.project-note{margin-top:18px;font-size:.78rem}
+.contact-panel{display:grid;grid-template-columns:1fr 1fr;gap:35px;padding:34px;border:1px solid #285743;border-radius:14px;background:linear-gradient(135deg,#10271e,#111114 65%)}
+.contact-details{align-self:center}.contact-item{padding:16px 0;border-bottom:1px solid var(--border)}.contact-item:first-child{border-top:1px solid var(--border)}.contact-item small{display:block;color:var(--muted);font:.7rem monospace;letter-spacing:.1em}.contact-item strong{overflow-wrap:anywhere}
+footer{padding:24px 0;border-top:1px solid var(--border)}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}footer p{font-size:.8rem;margin:0}
+@media(max-width:800px){.hero{grid-template-columns:1fr;gap:30px;padding-top:55px}.about-grid{grid-template-columns:1fr;gap:20px}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-panel{grid-template-columns:1fr}}
+@media(max-width:560px){.container{width:min(100% - 30px,1100px)}.navbar{padding:14px 0;align-items:flex-start;flex-direction:column;gap:12px}nav{gap:15px}nav a{font-size:.84rem}.section{padding:58px 0}.project-grid,.info-grid{grid-template-columns:1fr}.section-heading{align-items:flex-start;flex-direction:column;gap:5px}.contact-panel{padding:23px}.footer-inner{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="container navbar">
+<a class="logo" href="#home">My<span>Portfolio.</span></a>
+<nav aria-label="Main navigation"><a href="#home">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+</div></header>
+<main>
+<section class="hero container" id="home">
+<div>
+<p class="eyebrow">BIT STUDENT · FUTURE SOFTWARE DEVELOPER</p>
+<h1>Hello, my name is <span>Mary Kimilu</span></h1>
+<h2>I build ideas into <span class="green">digital experiences.</span></h2>
+<p class="hero-text">I'm learning to build modern websites, develop software, and solve real-world problems through technology.</p>
+<div class="actions"><a class="button primary" href="#projects">Explore My Work ↗</a><a class="button secondary" href="#contact">Get in touch</a></div>
+<p><small>Curious mind. Creative thinking. Continuous learning.</small></p>
+</div>
+<div class="code-card" aria-label="Decorative JavaScript code example">
+<div class="code-header"><span class="dots">● ● ●</span> mary.js</div>
+<pre><span class="purple">const</span> developer = {
+  name: <span class="code-green">"Mary Kimilu"</span>,
+  studying: <span class="code-green">"Information Technology"</span>,
+  interests: [
+    <span class="code-green">"Web development"</span>,
+    <span class="code-green">"Software"</span>,
+    <span class="code-green">"Problem solving"</span>
+  ],
+  mindset: <span class="code-green">"Always learning"</span>
+};</pre>
+<div class="code-footer">● Building something meaningful</div>
+</div>
+</section>
+<section class="section" id="about"><div class="container about-grid">
+<div><p class="eyebrow">01 — ABOUT ME</p><h2>Technology with <span class="green">purpose.</span></h2></div>
+<div>
+<p>I'm a Bachelor of Information Technology student at Kirinyaga University, passionate about software development and technology.</p>
+<p>I enjoy exploring how technology works, creating useful digital solutions, and continuously learning new skills to grow my expertise in the field.</p>
+<div class="info-grid">
+<div class="info-card"><small>CURRENT FOCUS</small><strong>Web development</strong></div>
+<div class="info-card"><small>MY GOAL</small><strong>Software developer</strong></div>
+<div class="info-card"><small>APPROACH</small><strong>Learn · Build · Improve</strong></div>
+<div class="info-card"><small>UNIVERSITY</small><strong>Kirinyaga University</strong></div>
+</div></div></div></section>
+<section class="section" id="projects"><div class="container">
+<div class="section-heading"><div><p class="eyebrow">02 — SELECTED WORK</p><h2>Projects & <span class="green">experiments.</span></h2></div><p>A growing collection of things I'm learning to create. I'll keep adding projects as I build them.</p></div>
+<div class="project-grid">
+<article class="project-card"><span class="project-number">PROJECT 01 · ⌘</span><h3>Number System Converter</h3><p>A learning project concept for converting decimal, binary, hexadecimal, and octal values in one place.</p><div class="tags"><span>Programming</span><span>Number systems</span><span>UI concept</span></div></article>
+<article class="project-card"><span class="project-number">PROJECT 02 · ✳</span><h3>Personal Portfolio Website</h3><p>This responsive portfolio introduces me, highlights my interests, and provides ways to connect.</p><div class="tags"><span>HTML</span><span>CSS</span><span>Responsive design</span></div></article>
+<article class="project-card"><span class="project-number">PROJECT 03 · ＋</span><h3>Your next idea</h3><p>Have an idea for a website or software project? This space is ready for your next build.</p><div class="tags"><span>Coming soon</span></div></article>
+</div>
+<p class="project-note">Note: The converter card is a project description, not a live converter app yet. Update it as your project develops.</p>
+</div></section>
+<section class="section" id="contact"><div class="container contact-panel">
+<div><p class="eyebrow">03 — CONTACT</p><h2>Let's build something <span class="green">amazing.</span></h2><p>If you'd like to get in touch, share an idea, or talk about technology, feel free to reach out. I'm always happy to connect and learn.</p><a class="button primary" href="mailto:patymerry@gmail.com">Send me an email ↗</a></div>
+<div class="contact-details">
+<div class="contact-item"><small>EMAIL</small><strong><a href="mailto:patymerry@gmail.com">Patymerry@gmail.com</a></strong></div>
+<div class="contact-item"><small>GITHUB</small><strong><a href="https://github.com/patymerry" target="_blank" rel="noopener noreferrer">github.com/patymerry</a></strong></div>
+</div>
+</div></section>
+</main>
+<footer><div class="container footer-inner"><a class="logo" href="#home">My<span>Portfolio.</span></a><p>© 2026 My BIT Portfolio. Built by Mary Kimilu</p><a href="#home">Back to top ↑</a></div></footer>
+</body>
+</html>
